@@ -2,6 +2,22 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
+    <Authors>Tien Doan</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseUrl>https://github.com/tiendoan246/Windows-Ldap-Active-Directory</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/tiendoan246/Windows-Ldap-Active-Directory</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/tiendoan246/Windows-Ldap-Active-Directory</RepositoryUrl>
+    <PackageTags>Windows Ldap Active Directory</PackageTags>
+    <PackageReleaseNotes>A utility library for querying the LDAP active directory.
+Using: Create instance of ILdapQueryService Call Query method Pass username for searching, skip for list all users in Ldap Active Directory</PackageReleaseNotes>
+    <Description>A utility library for querying the LDAP active directory.
+Using: Create instance of ILdapQueryService Call Query method Pass username for searching, skip for list all users in Ldap Active Directory</Description>
+    <PackageId>Windows.Ldap.Query</PackageId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>lib\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
