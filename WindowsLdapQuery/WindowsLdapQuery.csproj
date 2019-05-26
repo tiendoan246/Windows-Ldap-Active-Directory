@@ -14,6 +14,8 @@ Using: Create instance of ILdapQueryService Call Query method Pass username for 
     <Description>A utility library for querying the LDAP active directory.
 Using: Create instance of ILdapQueryService Call Query method Pass username for searching, skip for list all users in Ldap Active Directory</Description>
     <PackageId>Windows.Ldap.Query</PackageId>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

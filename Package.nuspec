@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>WindowsLdapQuery</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <title>A utility library for querying the LDAP active directory.</title>
     <authors>Tien Doan</authors>
     <owners>Tien Doan</owners>
