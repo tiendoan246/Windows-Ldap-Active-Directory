@@ -4,7 +4,7 @@ namespace WindowsLdapQuery.Windows.Ldap
 {
 	public class PublicLdapQuerySearcher
 	{
-		private string _domain;
+		public string Domain { get; set; }
 
 		public PublicLdapQuerySearcher()
 			: this(null)
@@ -13,16 +13,16 @@ namespace WindowsLdapQuery.Windows.Ldap
 
 		public PublicLdapQuerySearcher(string domain)
 		{
-			_domain = domain;
+            Domain = domain;
 		}
         
         private DirectoryEntry GetSearchRoot(string portNumber)
         {
             DirectoryEntry searchRoot = null;
             string domainDn = "", rootDse = "";
-            if (!string.IsNullOrEmpty(_domain))
+            if (!string.IsNullOrEmpty(Domain))
             {
-                rootDse = string.Format("LDAP://{0}/rootDSE", _domain);
+                rootDse = string.Format("LDAP://{0}/rootDSE", Domain);
             }
             else
             {

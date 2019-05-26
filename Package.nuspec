@@ -6,7 +6,7 @@
     <title>A utility library for querying the LDAP active directory.</title>
     <authors>Tien Doan</authors>
     <owners>Tien Doan</owners>
-    <license type="expression">Apache-2.0</license>
+    <license type="file">LICENSE</license>
     <projectUrl>https://github.com/tiendoan246/Windows-Ldap-Active-Directory</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>A utility library for querying the LDAP active directory.</description>

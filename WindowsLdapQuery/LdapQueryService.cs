@@ -20,5 +20,14 @@ namespace WindowsLdapQuery
 
 			return userLookup.Users;
 		}
-	}
+
+        public IEnumerable<CustomLookup> Query(string domain, string username = null)
+        {
+            _ldapQuerySearcher.Domain = domain;
+            LdapUserLookupQuery userLookup = new LdapUserLookupQuery();
+            _ldapQuerySearcher.Search(username ?? string.Empty, userLookup, false);
+
+            return userLookup.Users;
+        }
+    }
 }
