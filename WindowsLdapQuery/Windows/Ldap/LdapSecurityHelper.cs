@@ -14,8 +14,15 @@ namespace WindowsLdapQuery.Windows.Ldap
 		internal const string ADPropertyDescription = "Description";
 		internal const string ADPropertyObjectGuid = "objectGUID";
 		internal const string ADPropertyEmailAddress = "mail";
+        internal const string ADPropertyFirstName = "givenName";
+        internal const string ADPropertyLastName = "sn";
+        internal const string ADPropertyTelePhone = "telephoneNumber";
+        internal const string ADPropertyStreetAddress = "streetAddress";
+        internal const string ADPropertyMemberOff = "memberOf";
+        internal const string ADPropertyCountryCode = "countryCode";
 
-		internal const string LDAPPropertySID = "objectSid";
+
+        internal const string LDAPPropertySID = "objectSid";
         
 		internal const string ADProtocol = "LDAP://";
 		internal const string LocalProtocol = "WinNT://";

@@ -114,10 +114,17 @@ namespace WindowsLdapQuery.Windows.Ldap
 						directorySearcher.PropertiesToLoad.Add(LdapSecurityHelper.ADPropertyFullName);
 						directorySearcher.PropertiesToLoad.Add(LdapSecurityHelper.ADPropertyDescription);
 						directorySearcher.PropertiesToLoad.Add(LdapSecurityHelper.ADPropertyUserName);
-						directorySearcher.PropertiesToLoad.Add(LdapSecurityHelper.ADPropertyEmailAddress);
+                        directorySearcher.PropertiesToLoad.Add(LdapSecurityHelper.ADPropertyFirstName);
+                        directorySearcher.PropertiesToLoad.Add(LdapSecurityHelper.ADPropertyLastName);
+                        directorySearcher.PropertiesToLoad.Add(LdapSecurityHelper.ADPropertyUserName);
+                        directorySearcher.PropertiesToLoad.Add(LdapSecurityHelper.ADPropertyEmailAddress);
 						directorySearcher.PropertiesToLoad.Add(LdapSecurityHelper.LDAPPropertySID);
-                        
-						using (SearchResultCollection results = directorySearcher.FindAll())
+                        directorySearcher.PropertiesToLoad.Add(LdapSecurityHelper.ADPropertyTelePhone);
+                        directorySearcher.PropertiesToLoad.Add(LdapSecurityHelper.ADPropertyStreetAddress);
+                        directorySearcher.PropertiesToLoad.Add(LdapSecurityHelper.ADPropertyMemberOff);
+                        directorySearcher.PropertiesToLoad.Add(LdapSecurityHelper.ADPropertyCountryCode);
+
+                        using (SearchResultCollection results = directorySearcher.FindAll())
 						{
 							foreach (SearchResult result in results)
 							{
@@ -131,7 +138,14 @@ namespace WindowsLdapQuery.Windows.Ldap
 								queryResult.Description = LdapSecurityHelper.RetrieveSimpleActiveDirectoryStringProperty(result, LdapSecurityHelper.ADPropertyDescription, "");
 								queryResult.EmailAddress = LdapSecurityHelper.RetrieveSimpleActiveDirectoryStringProperty(result, LdapSecurityHelper.ADPropertyEmailAddress, "");
 								queryResult.UserName = LdapSecurityHelper.RetrieveSimpleActiveDirectoryStringProperty(result, LdapSecurityHelper.ADPropertyUserName, "");
-								queryResult.Domain = _domain;
+                                queryResult.FirstName = LdapSecurityHelper.RetrieveSimpleActiveDirectoryStringProperty(result, LdapSecurityHelper.ADPropertyFirstName, "");
+                                queryResult.LastName = LdapSecurityHelper.RetrieveSimpleActiveDirectoryStringProperty(result, LdapSecurityHelper.ADPropertyLastName, "");
+                                queryResult.TelePhone = LdapSecurityHelper.RetrieveSimpleActiveDirectoryStringProperty(result, LdapSecurityHelper.ADPropertyTelePhone, "");
+                                queryResult.StreetAddress = LdapSecurityHelper.RetrieveSimpleActiveDirectoryStringProperty(result, LdapSecurityHelper.ADPropertyStreetAddress, "");
+                                queryResult.MemberOf = LdapSecurityHelper.RetrieveSimpleActiveDirectoryStringProperty(result, LdapSecurityHelper.ADPropertyMemberOff, "");
+                                queryResult.CountryCode = LdapSecurityHelper.RetrieveSimpleActiveDirectoryStringProperty(result, LdapSecurityHelper.ADPropertyCountryCode, "");
+
+                                queryResult.Domain = _domain;
 								queryResult.IsLocal = false;
 
 								string propertyValue = _propertyHandler.ParseProperty(result);

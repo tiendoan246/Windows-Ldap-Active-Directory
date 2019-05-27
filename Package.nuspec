@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>WindowsLdapQuery</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <title>A utility library for querying the LDAP active directory.</title>
     <authors>Tien Doan</authors>
     <owners>Tien Doan</owners>
@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/tiendoan246/Windows-Ldap-Active-Directory</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>A utility library for querying the LDAP active directory.</description>
-    <releaseNotes>The first creation of this package.</releaseNotes>
+    <releaseNotes>Update support for domain name input, support more properties.</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>Windows Ldap Active Directory</tags>
     <dependencies>

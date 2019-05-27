@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace WindowsLdapQuery.Windows
 {
     public class LdapUserLookupQuery : LdapLookupQueryBase
     {
-        private static readonly string[] props = { "cn", "samAccountName", "mail", "facsimileTelephoneNumber", "mailNickname", "msExchHomeServerName", "userPrincipalName", "description", "fullName", "objectSid" };
+        private static readonly string[] props = { "cn", "givenName", "sn", "telephoneNumber", "streetAddress", "memberOf", "countryCode", "samAccountName", "mail", "facsimileTelephoneNumber", "mailNickname", "msExchHomeServerName", "userPrincipalName", "description", "fullName", "objectSid" };
 
         public override IEnumerable<string> PropertiesToLoad
         {

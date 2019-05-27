@@ -11,7 +11,7 @@ namespace WindowsLdapQuery.Windows
 
         public LdapLookupQueryBase()
         {
-			Users = new List<CustomLookup>();
+            Users = new List<CustomLookup>();
             FaxNumbers = new List<CustomLookup>();
         }
 
@@ -41,10 +41,43 @@ namespace WindowsLdapQuery.Windows
             valueCollection = result.Properties["description"];
             string description = valueCollection.Count > 0 ? valueCollection[0].ToString() : string.Empty;
 
+            valueCollection = result.Properties["samAccountName"];
+            string account = valueCollection.Count > 0 ? valueCollection[0].ToString() : string.Empty;
+
+            valueCollection = result.Properties["givenName"];
+            string firstName = valueCollection.Count > 0 ? valueCollection[0].ToString() : string.Empty;
+
+            valueCollection = result.Properties["sn"];
+            string lastName = valueCollection.Count > 0 ? valueCollection[0].ToString() : string.Empty;
+
+            valueCollection = result.Properties["telephoneNumber"];
+            string telephoneNumber = valueCollection.Count > 0 ? valueCollection[0].ToString() : string.Empty;
+
+            valueCollection = result.Properties["streetAddress"];
+            string streetAddress = valueCollection.Count > 0 ? valueCollection[0].ToString() : string.Empty;
+
+            valueCollection = result.Properties["memberOf"];
+            string memberOf = valueCollection.Count > 0 ? valueCollection[0].ToString() : string.Empty;
+
+            valueCollection = result.Properties["countryCode"];
+            string countryCode = valueCollection.Count > 0 ? valueCollection[0].ToString() : string.Empty;
+
             valueCollection = result.Properties["mail"];
             for (int i = 0; i < valueCollection.Count; i++)
             {
-				Users.Add(new CustomLookup() { Name = name, Description = description, Email = valueCollection[i].ToString() });
+                Users.Add(new CustomLookup()
+                {
+                    Account = account,
+                    Name = name,
+                    FirstName = firstName,
+                    LastName = lastName,
+                    Description = description,
+                    TelePhone = telephoneNumber,
+                    StreetAddress = streetAddress,
+                    MemberOf = memberOf,
+                    CountryCode = countryCode,
+                    Email = valueCollection[i].ToString()
+                });
             }
         }
     }
